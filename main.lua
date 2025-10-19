@@ -3,8 +3,6 @@
     
     Author: Eddie Castro
     eacastr1@uno.edu
-
-    ... (Description)
 ]]
 
 require 'src/Dependencies'

@@ -46,6 +46,27 @@ function BattleMenuState:init()
         orientation = 'table',
         rows = 3
     }
+
+    self.gauge = Gauge {
+        x = 0,
+        y = 0,
+        width = 128,
+        height = 32,
+        color = {
+            r = 1,
+            g = 0,
+            b = 0
+        },
+        backgroundColor = {
+            r = 0,
+            g = 0,
+            b = 1
+        },
+        max = 100,
+        current = 50
+    }
+
+    self.health = 50
 end
 
 function BattleMenuState:update(dt)
@@ -54,4 +75,5 @@ end
 
 function BattleMenuState:render()
     self.battleMenu:render()
+    self.gauge:render()
 end

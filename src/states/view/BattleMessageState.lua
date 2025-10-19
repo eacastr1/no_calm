@@ -36,6 +36,7 @@ function BattleMessageState:update(dt)
 end
 
 function BattleMessageState:render()
+    
     self.textbox:render()
 end
 
