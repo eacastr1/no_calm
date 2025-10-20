@@ -12,13 +12,25 @@ Entity = Class{}
 
 --[[
     The Entity constructor
-    - health: health value.
-    - attacks: table of attacks.
-    - sprite (?)
-    - animations (?)
+    - x: x-coordinate for rendering
+    - y: y-coordinate for rendering
+    - height: height for rendering
+    - width: width for rendering
+    - data: the data of the entity, such as stats and moves
+    - health: the health of the entity, given by the external data
+    - moves: the set of moves for the entity, given by the external data
 ]]
-function Entity:init(def)
 
+function Entity:init(def)
+    self.x = def.x
+    self.y = def.y
+    self.width = def.width
+    self.height = def.height
+    self.data = def.data
+
+    self.health = self.data.health
+    self.moves = self.data.moves
+    self.animations = self.data.animations
 end
 
 function Entity:update(dt)
@@ -26,5 +38,5 @@ function Entity:update(dt)
 end
 
 function Entity:render()
-
+    
 end
