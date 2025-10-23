@@ -7,7 +7,17 @@
 
 BattleMenuState = Class{__includes = BaseState}
 
-function BattleMenuState:init()
+--[[
+    The Battle Menu State constructor
+    - moves (table): the moves of the active character 
+]]
+function BattleMenuState:init(def)
+    local items = {}
+
+    for k,v in pairs(def.moves) do
+        items[k] = v
+    end
+
     self.battleMenu = Menu {
         x = 0,
         y = VIRTUAL_HEIGHT - 64,
@@ -33,7 +43,7 @@ function BattleMenuState:init()
             {
                 text = "Blood Drain", 
                 onSelect = function() 
-                    gStateStack:push(BattleMessageState('LOL...'))
+                    gStateStack:push(BattleMessageState('LOL...'))  
                 end
             },
             {

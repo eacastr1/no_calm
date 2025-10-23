@@ -1,10 +1,11 @@
 BattleState = Class{__includes = BaseState}
 
-function BattleState:init()
-
+function BattleState:init(def)
+    self.player = def.player
+    self.enemy = def.enemy
 end
 
-function BattleState:enter(params)
+function BattleState:enter()
 
 end
 

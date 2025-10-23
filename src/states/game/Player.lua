@@ -10,6 +10,9 @@ Player = Class{}
     - items: Items of the player (inventory class?)
 ]]
 function Player:init(def) 
-
+    self.party = def.party
 end
 
+function Player:onNotify()
+
+end

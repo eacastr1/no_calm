@@ -57,7 +57,15 @@ ENTITY_DEFS = {
         }
 
     },
-    ['cursed woman'], 
+    ['cursed woman'] = {
+        health = 75,
 
-    
+        MOVES = {
+            ['downward stab'] = {
+                name = 'Downward Stab',
+                damage = 0,
+                status = true
+            }
+        }
+    }
 }

@@ -23,7 +23,16 @@ function love.load()
         {r = 1, g = 1, b = 1},
         1,
         function () 
-            gStateStack:push(BattleMenuState())
+            gStateStack:push(BattleMenuState({
+                player = Player({
+                    party = Party({
+                        knife = Knife({
+                            data = ENTITY_DEFS['knife']
+                        })
+                    })
+                })
+            }
+            ))
             gStateStack:push(BattleMessageState("Testing..."))
             gStateStack:push(FadeOutState(
             {r = 1, g = 1, b = 1},
