@@ -17,7 +17,7 @@ Enemy = Class{__includes = Entity}
 ]]
 
 function Enemy:init(def)
-
+    Entity.init(self, def)
 end
 
 function Enemy:decide()

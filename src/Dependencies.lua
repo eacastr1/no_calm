@@ -20,12 +20,24 @@ require 'src/gui/Gauge'
 
 require 'src/StateMachine'
 require 'src/StateStack'
-require 'src/states/BaseState'
 
-require 'src/states/view/FadeInState'
-require 'src/states/view/FadeOutState'
-require 'src/states/view/BattleMessageState'
-require 'src/states/view/BattleMenuState'
+require 'src/states/BaseState'
+require 'src/states/FadeInState'
+require 'src/states/FadeOutState'
+require 'src/states/BattleState'
+require 'src/states/BattleMessageState'
+require 'src/states/BattleMenuState'
+require 'src/states/TurnState'
+
+
+require 'src/game/Player'
+require 'src/game/Party'
+require 'src/game/entity_defs'
+require 'src/game/Entity'
+require 'src/game/Enemy'
+require 'src/game/Hero'
+require 'src/game/Knife'
+require 'src/game/Ability'
 
 gFonts = {
     ['small']   = love.graphics.newFont('fonts/Silver.ttf', 18),

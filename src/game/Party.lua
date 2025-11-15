@@ -6,8 +6,8 @@ Party = Class{}
     - active: the active hero controlled by the player
 ]]
 function Party:init(def)
-    self.party = def.party
-    self.active = self.party[def.active]
+    self.party = def
+    self.active = self.party[1]
 end
 
 --[[
@@ -32,6 +32,7 @@ end
     Remove a hero from the party 
 ]]
 
+-- edge case: what if the current active hero is the removed hero?
 function Party:remove(hero)
     table.remove(self.party, hero)
 end

@@ -18,19 +18,11 @@ function Hero:init(def)
     self.fear = def.fear
 end
 
-function Hero:setFear(fear)
-    self.fear = fear
-end
-
-function Hero:getFear()
-    return self.fear
-end
-
 --[[
     Method: onNotify
 ------------------------
     Description: Notify the Hero object of an event.
 ]]
 function Hero:onNotify()
-
+    
 end

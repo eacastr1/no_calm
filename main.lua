@@ -18,21 +18,28 @@ function love.load()
         vsync = true
     })
 
+    local knife = Knife({
+        x = 0, y = 0, width = 0, height = 0,
+
+        data = ENTITY_DEFS['knife']
+    })
+
+    local pty = Party({ 
+        knife
+    })
+
+    local plyr = Player({
+        party = pty  
+    })
+
     gStateStack = StateStack()
     gStateStack:push(FadeInState(
         {r = 1, g = 1, b = 1},
         1,
         function () 
             gStateStack:push(BattleMenuState({
-                player = Player({
-                    party = Party({
-                        knife = Knife({
-                            data = ENTITY_DEFS['knife']
-                        })
-                    })
-                })
-            }
-            ))
+                player = plyr
+            }))
             gStateStack:push(BattleMessageState("Testing..."))
             gStateStack:push(FadeOutState(
             {r = 1, g = 1, b = 1},
@@ -62,12 +69,10 @@ function love.keyboard.wasPressed(key)
 end
 
 function love.update(dt)
-
     Timer.update(dt)
     gStateStack:update(dt)
     -- Reset keys pressed after each frame
     love.keyboard.keysPressed = {} 
-
 end
 
 function love.draw()

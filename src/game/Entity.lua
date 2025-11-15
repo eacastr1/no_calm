@@ -28,8 +28,9 @@ function Entity:init(def)
     self.height = def.height
     self.data = def.data
 
+    self.name = self.data.name
     self.health = self.data.health
-    self.moves = self.data.moves
+    self.abilities = self.data.ABILITIES
     self.animations = self.data.animations
 end
 
